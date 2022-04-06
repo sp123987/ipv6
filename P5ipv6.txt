@@ -1,0 +1,23 @@
+{Repeat below coad for every connected router}
+en
+conf t
+ipv6 unicast-routing
+
+{Repeat below coad for every connected port}
+int g0/0
+ipv6 enable
+ip address 2001:DB8:1:10::1/64
+no shut
+
+------------------
+{Repeat below coad for every connected router}
+en
+conf t
+ipv6 router rip RIPng
+
+{Repeat below coad for every connected port}
+int g0/0
+ipv6 rip RIPng enable
+
+-----------------
+
